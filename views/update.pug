@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Update Contact Info
+    body 
+        .form-wrapper
+            p User: #{userEmail}
+            p Favorite Book: #{favoriteBook}
+            form(method="POST")
+                label(for="newVal") New Favorite Book
+                input(type="text" name="newVal" required)
+                input(type="submit" value="Submit")  

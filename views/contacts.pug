@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        title= `${title}`
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/styles.css")
+    body 
+    h1 contacts 
+    .cards 
+        each contact in data
+            .card
+                h2.card__name #{contact.properties.firstname} #{contact.properties.lastname}
+                p.card__name #{contact.properties.email}

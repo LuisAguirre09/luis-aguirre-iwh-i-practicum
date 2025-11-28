@@ -1,0 +1,13 @@
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: calc(50% - 1rem);
+}
+
+.card {
+    padding: 1rem;
+    box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);
+}
+
