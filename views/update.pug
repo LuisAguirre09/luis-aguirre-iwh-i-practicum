@@ -9,6 +9,10 @@ html(lang="en")
             p User: #{userEmail}
             p Video Game: #{videoGame}
             form(method="POST")
-                label(for="game") Video Game
+                label(for="game") Video Game:
                 input(type="text" name="game" required)
+                br
+                label(for="categoryGame") Category VideoGame:
+                input(type="text" name="categoryGame" required)
                 input(type="submit" value="Submit")  
+
