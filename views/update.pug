@@ -8,11 +8,15 @@ html(lang="en")
         .form-wrapper
             p User: #{userEmail}
             p Video Game: #{videoGame}
+            p Game Date: #{dateGame}
             form(method="POST")
                 label(for="game") Video Game:
                 input(type="text" name="game" required)
                 br
                 label(for="categoryGame") Category VideoGame:
                 input(type="text" name="categoryGame" required)
+                br
+                label(for="dateGame") Date Game:
+                input(type="date" name="dateGame" required)
                 input(type="submit" value="Submit")  
 
