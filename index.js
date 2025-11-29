@@ -36,7 +36,7 @@ app.get('/update', async (req, res) => {
     // http://localhost:3000/update?email=laguirre@quaxar.com
     const email = req.query.email;
 
-    const getContact = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email&properties=email,favorite_book`;
+    const getContact = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email&properties=email,videogame_name`;
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ app.get('/update', async (req, res) => {
         const data = response.data;
        
         // res.json(data);
-        res.render('update', {userEmail: data.properties.email, favoriteBook: data.properties.favorite_book});
+        res.render('update', {userEmail: data.properties.email, favoriteBook: data.properties.favorite_book, videoGame: data.properties.videogame_name});
         
     } catch(err) {
         console.error(err);
@@ -57,7 +57,7 @@ app.get('/update', async (req, res) => {
 app.post('/update', async (req, res) => {
     const update = {
         properties: {
-            "favorite_book": req.body.newVal
+            "videogame_name": req.body.game
         }
     }
 
