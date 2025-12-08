@@ -32,6 +32,10 @@ app.get('/contacts', async (req, res) => {
     
 });
 
+app.get('/', async (req, res) => {
+
+})
+
 app.get('/update-cobj', async (req, res) => {
     // http://localhost:3000/update?email=laguirre@quaxar.com
     const email = req.query.email;
