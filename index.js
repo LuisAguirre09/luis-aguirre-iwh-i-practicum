@@ -33,7 +33,11 @@ app.get('/contacts', async (req, res) => {
 });
 
 app.get('/', async (req, res) => {
-
+    const gamesEndpoint = 'https://api.hubapi.com/crm/v3/objects/contacts?properties=videogame_name,category_game,videogame_date';
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
 })
 
 app.get('/update-cobj', async (req, res) => {
