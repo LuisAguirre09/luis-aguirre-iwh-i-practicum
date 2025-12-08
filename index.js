@@ -32,7 +32,7 @@ app.get('/contacts', async (req, res) => {
     
 });
 
-app.get('/update', async (req, res) => {
+app.get('/update-cobj', async (req, res) => {
     // http://localhost:3000/update?email=laguirre@quaxar.com
     const email = req.query.email;
 
@@ -54,7 +54,7 @@ app.get('/update', async (req, res) => {
     }
 });
 
-app.post('/update', async (req, res) => {
+app.post('/update-cobj', async (req, res) => {
     const update = {
         properties: {
             "videogame_name": req.body.game,
@@ -64,14 +64,14 @@ app.post('/update', async (req, res) => {
     }
 
     const email = req.query.email;
-    const updateContact = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email`;
+    const updateGame = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email`;
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
     };
 
     try { 
-        await axios.patch(updateContact, update, { headers } );
+        await axios.patch(updateGame, update, { headers } );
         res.redirect('back');
     } catch(err) {
         console.error(err);
