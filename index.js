@@ -38,6 +38,13 @@ app.get('/', async (req, res) => {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
     };
+
+    try {
+        const resp = await axios.get(gamesEndpoint, { headers });
+        const data = resp.data.results;
+    } catch (error) {
+        console.error(err);
+    }
 })
 
 app.get('/update-cobj', async (req, res) => {
