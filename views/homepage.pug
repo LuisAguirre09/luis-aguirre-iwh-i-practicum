@@ -15,9 +15,11 @@ html(lang="en")
         tr
           th Game Name
           th Category Game
+          th Date Game
       tbody
         each game in data
           tr
             td= game.properties.videogame_name
             td= game.properties.category_game
+            td= game.properties.videogame_date
           
