@@ -1,9 +1,21 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body 
-    h1 Update Custom Object
-    a(href="/update-cobj") Add to this table
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Custom Object Table
+
+    a(href="/update-cobj?email=laguirre@quaxar.com") Add to this table
+
+    table
+      thead
+        tr
+          th Concert Name
+      tbody
+        each game in data
+          tr
+            td= game.properties.videogame_name
+          

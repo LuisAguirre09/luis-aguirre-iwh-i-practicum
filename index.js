@@ -33,7 +33,7 @@ app.get('/contacts', async (req, res) => {
 });
 
 app.get('/', async (req, res) => {
-    const gamesEndpoint = 'https://api.hubapi.com/crm/v3/objects/contacts?properties=videogame_name,category_game,videogame_date';
+    const gamesEndpoint = 'https://api.hubapi.com/crm/v3/objects/0-1?properties=videogame_name,category_game,videogame_date';
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
@@ -42,6 +42,8 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(gamesEndpoint, { headers });
         const data = resp.data.results;
+
+        res.render('homepage', { title: 'Homepage | HubSpot APIs', data });
     } catch (error) {
         console.error(err);
     }
@@ -87,7 +89,7 @@ app.post('/update-cobj', async (req, res) => {
 
     try { 
         await axios.patch(updateGame, update, { headers } );
-        res.redirect('back');
+        res.redirect('/');
     } catch(err) {
         console.error(err);
     }
