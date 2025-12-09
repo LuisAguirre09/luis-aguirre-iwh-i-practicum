@@ -64,7 +64,7 @@ app.get('/update-cobj', async (req, res) => {
         const data = response.data;
        
         // res.json(data);
-        res.render('update', {userEmail: data.properties.email, favoriteBook: data.properties.favorite_book, videoGame: data.properties.videogame_name, categoryGame: data.properties.category_game, dateGame: data.properties.videogame_date});
+        res.render('update', {title: 'Update Custom Object Form | Integrating With HubSpot I Practicum', userEmail: data.properties.email, favoriteBook: data.properties.favorite_book, videoGame: data.properties.videogame_name, categoryGame: data.properties.category_game, dateGame: data.properties.videogame_date});
         
     } catch(err) {
         console.error(err);
